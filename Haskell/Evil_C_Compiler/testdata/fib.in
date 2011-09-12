@@ -1,0 +1,19 @@
+#include <stdio.h>
+
+void Fib() {
+   int a=1;
+   int b=1;
+   int n=0;
+   while (n < 46) {
+      printf("%d\n",a);
+      int temp=a;
+      a=b;
+      b=temp+b;
+      n=n+1;
+   }
+}
+
+int main() {
+   Fib();
+   return 0;
+}
