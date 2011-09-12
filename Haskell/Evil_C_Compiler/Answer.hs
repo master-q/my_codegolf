@@ -1,8 +1,6 @@
-main=interact(\z->"Compiling...\nRunning...\n"++unlines (g z))
-  where g a | "FizzBuzz()" `elem` words a = f
-            | "Fib()" `elem` words a = k
-            | otherwise = l
-f = map i [1..100]where i n = let h = concat$concat[["Fizz"|g 3],["Buzz"|g 5]];g a = mod n a == 0;in last$h:[show n|h==""]
+main=interact(\z->"Compiling...\nRunning...\n"++unlines (concatMap snd $ filter (\b -> fst b `elem` words z) [("FizzBuzz()",f),("Fib()",k),("hamaji",l)]))
+f = map i [1..100]
+i n = let h = concat$concat[["Fizz"|g 3],["Buzz"|g 5]];g a = mod n a == 0;in last$h:[show n|h==""]
 k = map show (take 46 t)
 t = 1:1:zipWith (+) t (tail t)
 l = map j $ reverse [1..99]
