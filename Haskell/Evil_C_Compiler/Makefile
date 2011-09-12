@@ -2,6 +2,9 @@ all: Answer
 Answer: Answer.hs
 	ghc --make -Wall Answer.hs
 
+count:
+	wc -c Answer.hs
+
 lint:
 	hlint -c *.hs
 
@@ -14,4 +17,4 @@ clean:
 	rm -rf *~
 	rm -rf */*~
 
-.PHONY: lint test clean
+.PHONY: lint test clean count
